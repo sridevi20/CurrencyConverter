@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Currencies</title>
+    <script src="./js/bundle.js"></script>
+  	<link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+  <h1>Currency Exchange Calculator</h1>
+  <div id="app">
+
+
+   <h2>Convert Currency:</h2>
+   <!-- <input type="text"  v-for="rate in currencies.rates" v-bind:prop="rate"
+      v-bind:key="rate.id"> -->
+
+  <label for="currency_select">Select a Currency:</label>
+  <select id="currency_select" v-model="selectedCurrency">
+     <option v-for="(value, rate) in currencies.rates">
+          {{ rate }}: {{ value }}
+      </option>
+   </select>
+   	<div id="selected_currency" v-if="selectedCurrency">
+      <h3>Convert Euros</h3>
+
+  </div>
+  </body>
+</html>
